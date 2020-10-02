@@ -19,22 +19,24 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - uses: dschep/install-poetry-action@v1.3
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v2
       with:
         python-version: ${{ matrix.python-version }}
-    - name: Install Poetry and dependencies
+
+    - name: Update pip
       run: |
-        # install Poetry
-        curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
-        # update pip
         python -m pip install --upgrade pip
-        # install project dependencies
+
+   - name: Install project dependencies
+      run: |
         poetry install
+
     - name: Lint with black
       run: |
-        # stop the build if there are Python syntax errors or undefined names
         poetry run black .
+
     - name: Test with pytest
       run: |
         poetry run pytest

@@ -39,7 +39,7 @@ If you do not wish to use containers, make sure to specify the `--no-container` 
 ## Installation
 
 ```bash
-$ pip install aws_coco
+$ pip install aws-coco
 ```
 
 ## Usage

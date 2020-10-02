@@ -15,6 +15,8 @@ def construct_parser():
         description="A utility for managing AWS Console Sessions"
     )
 
+    parser.add_argument('--version', action='version', version='%(prog)s 0.1.3')
+
     parser.add_argument("--profile", "-p", help="The AWS profile to use", default=None)
 
     parser.add_argument(

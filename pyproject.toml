@@ -1,9 +1,14 @@
 [tool.poetry]
 name = "aws-coco"
-version = "0.1.0"
+version = "0.1.3"
 description = "A utility for managing AWS Console Sessions with Firefox Containers"
 authors = ["Joe Snell <joepsnell@gmail.com>"]
 license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/wulfmann/aws-coco"
+documentation = "https://github.com/wulfmann/aws-coco/README.md"
+repository = "https://github.com/wulfmann/aws-coco"
+keywords = ["aws", "firefox containers", "aws console", "console container"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
@@ -19,6 +24,7 @@ coco = "aws_coco.main:run"
 
 [tool.poetry.urls]
 issues = "https://github.com/wulfmann/aws-coco/issues"
+
 [build-system]
 requires = ["poetry>=0.12"]
 build-backend = "poetry.masonry.api"

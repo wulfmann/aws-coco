@@ -7,7 +7,7 @@ This tool allows you to manage AWS Console Sessions with Firefox Containers
 Ensure you've  met the [requirements](#requirements).
 
 ```bash
-$ pip install aws_coco
+$ pip install aws-coco
 ```
 
 Usage

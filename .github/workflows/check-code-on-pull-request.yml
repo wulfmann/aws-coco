@@ -1,0 +1,40 @@
+# At every pull request, this workflow will install Poetry, project dependencies, lint and run tests.
+# Github provides a complete guide on using python with Github Action so for 
+# more information refer to:
+# https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
+
+name: Check code on pull request
+
+on:
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.7]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install Poetry and dependencies
+      run: |
+        # install Poetry
+        curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+        # update pip
+        python -m pip install --upgrade pip
+        # install project dependencies
+        poetry install
+    - name: Lint with black
+      run: |
+        # stop the build if there are Python syntax errors or undefined names
+        poetry run black .
+    - name: Test with pytest
+      run: |
+        poetry run pytest

@@ -1,3 +1,16 @@
+# IDE
 .vscode
+
+# misc
 .DS_Store
+
+# test
 .coverage
+
+# python
+*.pyc
+*.egg-info
+__pycache__
+
+# poetry
+dist

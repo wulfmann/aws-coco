@@ -22,12 +22,19 @@ Continue reading for a more in-depth walkthrough of the setup.
 
 ## Requirements
 
+If using containers:
+
 - [Firefox](https://www.mozilla.org/en-US/firefox/new/)
 - [Firefox Multi-Account Containers](https://addons.mozilla.org/en-US/firefox/addon/multi-account-containers/)
 - [Open URL in Container Extension](https://addons.mozilla.org/en-US/firefox/addon/open-url-in-container/)
-- [Python >= 3.7](http://python.org/)
 
 If you don't wish to install the extension through the marketplace, the source for the extension can be found [here](https://github.com/honsiorovskyi/open-url-in-container).
+
+If not:
+- Any browser supported by [webbrowser](https://docs.python.org/3.8/library/webbrowser.html#webbrowser.get)
+- [Python >= 3.7](http://python.org/)
+
+If you do not wish to use containers, make sure to specify the `--no-container` flag.
 
 ## Installation
 

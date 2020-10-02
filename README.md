@@ -20,6 +20,8 @@ You should now have a new browser tab with your aws session!
 
 Continue reading for a more in-depth walkthrough of the setup.
 
+If `coco` is too generic, this package also exposes `aws_coco`.
+
 ## Requirements
 
 If using containers:
@@ -53,6 +55,20 @@ $ coco --color green --icon fingerprint --name test
 ```
 
 This will open the url in a `green` firefox container tab named `test` with a `fingerprint` icon.
+
+This can be annoying to type, so it's recommended to build aliases for your accounts.
+
+Example alias:
+
+```bash
+alias coco-test=coco --color green --icon fingerprint --name test
+```
+
+Now you can just run:
+
+```bash
+$ coco-test
+```
 
 ### Credential Resolution
 

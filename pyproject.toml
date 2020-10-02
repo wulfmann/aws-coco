@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "aws-coco"
-version = "0.1.6"
+version = "0.1.7"
 description = "A utility for managing AWS Console Sessions with Firefox Containers"
 authors = ["Joe Snell <joepsnell@gmail.com>"]
 license = "MIT"
@@ -21,6 +21,7 @@ black = "^20.8b1"
 
 [tool.poetry.scripts]
 coco = "aws_coco.main:run"
+aws-coco = "aws_coco.main:run"
 
 [tool.poetry.urls]
 issues = "https://github.com/wulfmann/aws-coco/issues"

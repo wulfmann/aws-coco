@@ -1,10 +1,10 @@
 # AWS coco (console container)
 
-This tool allows you to manage AWS Console Sessions with Firefox Containers
+Easily manage AWS Console Sessions
 
 ## Quickstart
 
-Ensure you've  met the [requirements](#requirements).
+Install
 
 ```bash
 $ pip install aws-coco
@@ -13,7 +13,7 @@ $ pip install aws-coco
 Usage
 
 ```bash
-$ coco -c green -i fingerprint
+$ coco
 ```
 
 You should now have a new browser tab with your aws session!
@@ -24,15 +24,18 @@ If `coco` is too generic, this package also exposes `aws_coco`.
 
 ## Requirements
 
-If using containers:
+There are two different modes for `coco`. Normal and Firefox Containers.
+
+### Container Mode (default)
 
 - [Firefox](https://www.mozilla.org/en-US/firefox/new/)
 - [Firefox Multi-Account Containers](https://addons.mozilla.org/en-US/firefox/addon/multi-account-containers/)
 - [Open URL in Container Extension](https://addons.mozilla.org/en-US/firefox/addon/open-url-in-container/)
 
-If you don't wish to install the extension through the marketplace, the source for the extension can be found [here](https://github.com/honsiorovskyi/open-url-in-container).
+If you don't wish to install the extension through the marketplace, you can install from source [here](https://github.com/honsiorovskyi/open-url-in-container).
 
-If not:
+### Normal Mode
+
 - Any browser supported by [webbrowser](https://docs.python.org/3.8/library/webbrowser.html#webbrowser.get)
 - [Python >= 3.7](http://python.org/)
 
@@ -49,6 +52,8 @@ $ pip install aws-coco
 This section explains how to use `coco` and covers some of the options available to you.
 
 ### Basic Usage
+
+#### Container Mode Example
 
 ```bash
 $ coco --color green --icon fingerprint --name test
@@ -69,6 +74,14 @@ Now you can just run:
 ```bash
 $ coco-test
 ```
+
+#### Normal Mode Example
+
+```bash
+$ coco
+```
+
+This will open your session in your default browser.
 
 ### Credential Resolution
 
@@ -91,6 +104,7 @@ This section contains a description of the various options available to you. You
 |`--profile`, `-p`|The AWS profile to use||false|
 
 ### Available Colors
+
 |value|
 |-----|
 |blue|
@@ -103,6 +117,7 @@ This section contains a description of the various options available to you. You
 |purple|
 
 ### Available Icons
+
 |value|
 |-----|
 |fingerprint|
@@ -119,27 +134,6 @@ This section contains a description of the various options available to you. You
 |circle|
 |fence|
 
-## Development
+## Contributing
 
-```bash
-$ git clone https://github.com/wulfmann/aws-coco.git
-$ git clone git@github.com:wulfmann/aws-coco.git
-```
-
-Install Dependencies
-
-```bash
-$ poetry install
-```
-
-Run the command
-
-```bash
-$ poetry run coco -c green -i fingerprint
-```
-
-Run tests
-
-```bash
-$ poetry run pytest
-```
+For more information on contributing, check out the [doc](/CONTRIBUTING.md)

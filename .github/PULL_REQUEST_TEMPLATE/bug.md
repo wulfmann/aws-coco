@@ -1,5 +1,0 @@
-# Bug Report
-
-## Description
-
-## Replication

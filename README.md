@@ -1,5 +1,7 @@
 # AWS coco (console container)
 
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/aws-coco)
+
 Easily manage AWS Console Sessions
 
 ## Quickstart
